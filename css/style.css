@@ -1,0 +1,198 @@
+:root {
+  /* Brand Colors - Candy Pop Palette */
+  --bg-color: #F8FDFF;
+  /* Very light blue-white background */
+
+  /* Primary: Bright Blue/Cyan */
+  --primary-color: #00B0FF;
+  --primary-dark: #0091EA;
+
+  /* Accent: Hot Pink/Magenta */
+  --accent-color: #F50057;
+  --accent-hover: #C51162;
+
+  /* Secondary Accents */
+  --color-mint: #69F0AE;
+  --color-purple: #EA80FC;
+
+  /* Text */
+  --text-color: #37474F;
+  --text-light: #90A4AE;
+  --white: #ffffff;
+
+  /* Modern UI Tokens */
+  --shadow-sm: 0 4px 12px rgba(0, 176, 255, 0.1);
+  --shadow-md: 0 12px 30px -10px rgba(245, 0, 87, 0.15);
+  --radius-md: 16px;
+  --radius-lg: 30px;
+  --font-main: 'Inter', 'Roboto', sans-serif;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  /* Cute Polka Dot Pattern */
+  background-image: radial-gradient(#E1F5FE 2px, transparent 2px), radial-gradient(#E1F5FE 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+
+  color: var(--text-color);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--primary-color), var(--color-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #29B6F6, #00B0FF);
+  /* Cyan to Blue */
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 176, 255, 0.3);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #FF80AB, #F50057);
+  /* Pink to Magenta */
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(245, 0, 87, 0.3);
+}
+
+.section {
+  padding: 80px 0;
+}
+
+/* Header */
+header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links .active {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Cards & Interactions */
+.card-hover {
+  transition: var(--transition);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+/* Form Styles */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #EEE;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(38, 166, 154, 0.1);
+}
