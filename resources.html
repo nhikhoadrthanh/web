@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu miễn phí - Nhi khoa DrThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .resource-card {
+            display: flex;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            flex-direction: column;
+        }
+
+        @media(min-width: 600px) {
+            .resource-card {
+                flex-direction: row;
+            }
+        }
+
+        .resource-img {
+            flex: 1;
+            background-color: #ffecb3;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .resource-content {
+            flex: 2;
+            padding: 2rem;
+        }
+
+        .download-box {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header
+        style="background-color: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; padding: 10px 0;">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo"><img src="public/logo.png" alt="DrThanh Logo" style="height: 50px;"></a>
+            <button class="mobile-menu-btn"
+                style="display: none; font-size: 1.5rem; background: none; border: none;">☰</button>
+            <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="resources.html">Tài liệu</a></li>
+                <li><a href="products.html">Sản phẩm số</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Đặt
+                        lịch khám</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h1 class="text-center mb-4">Tài Liệu & Quà Tặng Miễn Phí</h1>
+        <p class="text-center mb-4">DrThanh biên soạn riêng tặng ba mẹ, giúp việc chăm sóc bé khoa học và dễ dàng hơn.
+        </p>
+
+        <!-- Resource 1 -->
+        <div class="resource-card">
+            <div class="resource-img">📘</div>
+            <div class="resource-content">
+                <span style="color: var(--accent-color); font-weight: bold; font-size: 0.8rem;">HOT NHẤT</span>
+                <h3>Ebook: Cẩm nang Chăm sóc Sơ sinh (0-3 tháng)</h3>
+                <p class="mb-2">Tổng hợp kiến thức về tắm bé, vệ sinh rốn, xử lý vàng da, trào ngược...</p>
+                <div class="download-box">
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: bold;">Điền email để nhận file PDF
+                        ngay:</p>
+                    <form class="lead-form-resource" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="hidden" name="resource" value="Ebook Sơ Sinh (0-3 thang)">
+                        <input type="text" name="name" placeholder="Tên mẹ..."
+                            style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; flex: 1;" required>
+                        <input type="email" name="email" placeholder="Email..."
+                            style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; flex: 1;" required>
+                        <button type="submit" class="btn btn-primary">Gửi ngay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource 2 -->
+        <div class="resource-card">
+            <div class="resource-img">✅</div>
+            <div class="resource-content">
+                <span style="color: var(--primary-color); font-weight: bold; font-size: 0.8rem;">CẦN THIẾT</span>
+                <h3>Checklist: Dấu hiệu nguy hiểm cần đi viện ngay</h3>
+                <p class="mb-2">Bảng kiểm 10 dấu hiệu cấp cứu ở trẻ em ba mẹ bắt buộc phải thuộc lòng.</p>
+                <div class="download-box">
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: bold;">Điền email để nhận file ảnh
+                        chất lượng cao:</p>
+                    <form style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="email" placeholder="Email của bạn..."
+                            style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; flex: 1;" required>
+                        <button type="submit" class="btn btn-primary">Gửi ngay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upsell -->
+        <div class="text-center mt-4">
+            <p style="font-size: 1.1rem; color: #555;">Bạn muốn học kỹ hơn qua Video trực quan?</p>
+            <a href="products.html" class="btn btn-accent mt-2">Xem khoá học Video</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 40px 0; border-top: 1px solid #eee;">
+        <div class="container text-center">
+            <p>&copy; 2026 DrThanh Pediatrics</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

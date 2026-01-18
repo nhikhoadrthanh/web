@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quản lý bài viết</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <span style="font-weight: bold; font-size: 1.2rem; color: var(--primary-color);">Admin Panel</span>
+            <button onclick="handleLogout()" class="btn btn-accent" style="padding: 8px 16px;">Đăng xuất</button>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h1>Tạo bài viết mới</h1>
+        <p class="mb-4">Bài viết sẽ được lưu vào trình duyệt hiện tại và hiển thị trên trang Blog.</p>
+
+        <form onsubmit="handleCreatePost(event)"
+            style="background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-md); max-width: 800px;">
+            <div class="mb-2">
+                <label>Tiêu đề bài viết</label>
+                <input type="text" id="post-title" required placeholder="Ví dụ: Cách hạ sốt cho bé...">
+            </div>
+
+            <div class="mb-2">
+                <label>Link hình ảnh (URL)</label>
+                <input type="url" id="post-img" placeholder="https://..." required>
+                <small style="color: #888;">Hãy copy link ảnh từ Facebook hoặc Google rồi dán vào đây.</small>
+            </div>
+
+            <div class="mb-2">
+                <label>Danh mục</label>
+                <select id="post-category">
+                    <option>Bệnh lý</option>
+                    <option>Dinh dưỡng</option>
+                    <option>Sơ sinh</option>
+                    <option>Mẹo hay</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label>Nội dung tóm tắt</label>
+                <textarea id="post-desc" rows="4" required placeholder="Mô tả ngắn gọn nội dung..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Đăng bài ngay</button>
+        </form>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

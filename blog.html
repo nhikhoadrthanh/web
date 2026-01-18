@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện kiến thức - Nhi khoa DrThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-tag {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-img {
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header
+        style="background-color: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; padding: 10px 0;">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo"><img src="public/logo.png" alt="DrThanh Logo" style="height: 50px;"></a>
+            <button class="mobile-menu-btn"
+                style="display: none; font-size: 1.5rem; background: none; border: none;">☰</button>
+            <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="blog.html" class="active" style="color: var(--primary-color); font-weight: bold;">Bài
+                        viết</a></li>
+                <li><a href="resources.html">Tài liệu</a></li>
+                <li><a href="products.html">Sản phẩm số</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Đặt
+                        lịch khám</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h1 class="text-center mb-4">Thư Viện Kiến Thức</h1>
+
+        <!-- Search -->
+        <div style="max-width: 500px; margin: 0 auto 2rem;">
+            <input type="text" placeholder="Tìm kiếm bài viết (vd: sốt, biếng ăn)..."
+                style="width: 100%; padding: 12px; border-radius: 20px; border: 1px solid #ddd;">
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <span class="filter-tag active">Tất cả</span>
+            <span class="filter-tag">Sơ sinh</span>
+            <span class="filter-tag">Ăn dặm</span>
+            <span class="filter-tag">Hô hấp</span>
+            <span class="filter-tag">Tiêu hóa</span>
+            <span class="filter-tag">Tiêm chủng</span>
+            <span class="filter-tag">Mẹ bầu</span>
+        </div>
+
+        <!-- Articles Grid -->
+        <div id="blog-grid" class="concerns-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <!-- Content will be loaded from js/blog-data.js and LocalStorage -->
+            <p>Đang tải bài viết...</p>
+        </div>
+    </section>
+
+    <!-- CTAs -->
+    <section class="section container text-center">
+        <h2 class="mb-2">Bạn có câu hỏi riêng về bé?</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="booking.html" class="btn btn-primary">Đặt lịch khám</a>
+            <a href="consultation.html" class="btn btn-accent">Tư vấn Online</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 40px 0; border-top: 1px solid #142a270a;">
+        <div class="container text-center">
+            <p>&copy; 2026 DrThanh Pediatrics</p>
+        </div>
+    </footer>
+
+    <script src="js/blog-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

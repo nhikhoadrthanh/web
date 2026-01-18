@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tư vấn Online - Nhi khoa DrThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .price-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .price-price {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .price-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            /* Space for checkmark */
+            position: relative;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Styles (Repeated for consistency) */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header
+        style="background-color: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; padding: 10px 0;">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo"><img src="public/logo.png" alt="DrThanh Logo" style="height: 50px;"></a>
+            <button class="mobile-menu-btn"
+                style="display: none; font-size: 1.5rem; background: none; border: none;">☰</button>
+            <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="resources.html">Tài liệu</a></li>
+                <li><a href="products.html">Sản phẩm số</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Đặt
+                        lịch khám</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h1 class="text-center">Tư Vấn Online 1:1</h1>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">
+            Kết nối trực tiếp với Bác sĩ DrThanh qua Video Call / Zalo. Giải đáp mọi thắc mắc về sức khoẻ và chăm sóc bé
+            yêu ngay tại nhà.
+        </p>
+
+        <div class="pricing-grid">
+            <!-- Gói 15p -->
+            <div class="price-card">
+                <h3>Gói Hỏi Nhanh</h3>
+                <div class="price-price">150.000đ</div>
+                <p class="mb-2">15 phút tư vấn</p>
+                <ul class="price-features">
+                    <li>Định hướng vấn đề nhanh.</li>
+                    <li>Phù hợp câu hỏi cụ thể (sốt, thuốc).</li>
+                    <li>Chat Zalo hỗ trợ sau gọi (1 buổi).</li>
+                </ul>
+                <a href="booking.html" class="btn btn-primary">Đăng ký ngay</a>
+            </div>
+
+            <!-- Gói 30p -->
+            <div class="price-card" style="border: 2px solid var(--primary-color);">
+                <div
+                    style="background: var(--primary-color); color: white; border-radius: 20px; display: inline-block; padding: 4px 12px; font-size: 0.8rem; margin-bottom: 1rem;">
+                    Phổ biến nhất</div>
+                <h3>Gói Chuyên Sâu</h3>
+                <div class="price-price">300.000đ</div>
+                <p class="mb-2">30 phút tư vấn</p>
+                <ul class="price-features">
+                    <li>Phân tích kỹ dinh dưỡng/giấc ngủ.</li>
+                    <li>Xem xét nghiệm/đơn thuốc cũ.</li>
+                    <li>Lên phác đồ chăm sóc chi tiết.</li>
+                </ul>
+                <a href="booking.html" class="btn btn-primary">Đăng ký ngay</a>
+            </div>
+
+            <!-- Gói Theo Dõi -->
+            <div class="price-card">
+                <h3>Gói Đồng Hành</h3>
+                <div class="price-price">1.000.000đ</div>
+                <p class="mb-2">7 ngày theo dõi</p>
+                <ul class="price-features">
+                    <li>1 buổi Video Call 30 phút.</li>
+                    <li>Chat support liên tục 7 ngày.</li>
+                    <li>Điều chỉnh thuốc/dinh dưỡng hàng ngày.</li>
+                </ul>
+                <a href="booking.html" class="btn btn-primary">Đăng ký ngay</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="mb-2">Quy trình đăng ký</h3>
+            <ol style="padding-left: 20px; line-height: 2;">
+                <li>Chọn gói và nhấn "Đăng ký ngay" (sẽ chuyển đến form).</li>
+                <li>Điền thông tin và upload ảnh (nếu có).</li>
+                <li>Chuyển khoản theo thông tin nhận được sau khi đăng ký.</li>
+                <li>Trợ lý bác sĩ sẽ liên hệ xếp lịch hẹn trong vòng 2h.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 40px 0; border-top: 1px solid #eee;">
+        <div class="container text-center">
+            <p>&copy; 2026 DrThanh Pediatrics</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

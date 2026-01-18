@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhi khoa DrThanh - Bác sĩ giải thích dễ hiểu cho ba mẹ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Responsive Styles for Header/Nav -->
+    <style>
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--bg-color);
+            padding: 40px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .concerns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .concern-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            /* Softer, deeper shadow */
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            /* Bouncy transition */
+            cursor: pointer;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .concern-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Specific pastel colors for cards (will use nth-child in usage or specific classes) */
+        .concern-card:nth-child(1) {
+            background: #E3F2FD;
+            color: #1565C0;
+        }
+
+        /* Blue */
+        .concern-card:nth-child(2) {
+            background: #FCE4EC;
+            color: #C2185B;
+        }
+
+        /* Pink */
+        .concern-card:nth-child(3) {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+
+        /* Orange */
+        .concern-card:nth-child(4) {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        /* Green */
+        .concern-card:nth-child(5) {
+            background: #F3E5F5;
+            color: #7B1FA2;
+        }
+
+        /* Purple */
+        .concern-card:nth-child(6) {
+            background: #FFF8E1;
+            color: #FFA000;
+        }
+
+        /* Yellow */
+
+        .concern-card h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="public/logo.png" alt="DrThanh Logo">
+            </a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="resources.html">Tài liệu</a></li>
+                <li><a href="products.html">Sản phẩm số</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Đặt
+                        lịch khám</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section"
+        style="padding: 100px 0 60px 0; background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%);">
+        <div class="container" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 320px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1.1;">Chào mừng ba mẹ đến với<br><span
+                        style="color: var(--primary-color);">Phòng Khám Nhi Dr.Thanh</span></h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #555; margin-top: 1rem;">"Bé Khỏe Mẹ Yêu" - Nơi
+                    đồng hành cùng ba mẹ chăm sóc sức khỏe toàn diện cho bé yêu với sự tận tâm và chuyên môn cao.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="booking.html" class="btn btn-primary"
+                        style="padding: 16px 32px; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0, 176, 255, 0.3);">Đặt
+                        lịch khám ngay</a>
+                    <a href="resources.html" class="btn btn-accent"
+                        style="padding: 16px 32px; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(245, 0, 87, 0.3);">Nhận
+                        tài liệu miễn phí</a>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 320px; display: flex; justify-content: center;">
+                <!-- Updated Banner Image -->
+                <img src="public/clinic_banner.png" alt="Dr Thanh Pediatric Clinic Banner"
+                    style="width: 100%; max-width: 600px; box-shadow: var(--shadow-md); border-radius: 20px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Doctor Profile Section -->
+    <section class="section container" style="padding-top: 0;">
+        <div
+            style="background: white; border-radius: 24px; box-shadow: var(--shadow-md); overflow: hidden; display: flex; flex-wrap: wrap; border: 1px solid #E1F5FE;">
+            <div
+                style="flex: 1; min-width: 300px; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); display: flex; align-items: flex-end; justify-content: center; padding-top: 2rem;">
+                <img src="public/doctor_portrait.png" alt="BS Nguyen Viet Thanh"
+                    style="width: 100%; max-width: 380px; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+            </div>
+            <div
+                style="flex: 1.5; min-width: 300px; padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                    <h2 style="margin: 0; font-size: 2.5rem; color: #1C1E21;">Nguyễn Việt Thanh</h2>
+                    <!-- Facebook Verified Blue Tick -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="margin-top: 5px;">
+                        <path
+                            d="M22.5 12.5C22.5 18.0228 18.0228 22.5 12.5 22.5C6.97715 22.5 2.5 18.0228 2.5 12.5C2.5 6.97715 6.97715 2.5 12.5 2.5C18.0228 2.5 22.5 6.97715 22.5 12.5Z"
+                            fill="#1877F2" />
+                        <path d="M10.5 15.5L7.5 12.5L8.91 11.09L10.5 12.67L16.09 7.09L17.5 8.5L10.5 15.5Z"
+                            fill="white" />
+                    </svg>
+                </div>
+                <p
+                    style="color: #65676B; font-weight: 500; font-size: 1.1rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 8px;">
+                    Bác sĩ Chuyên khoa 1 Nhi khoa <span style="font-size: 5px;">●</span> 74K người theo dõi
+                </p>
+
+                <blockquote
+                    style="font-size: 1.2rem; font-style: italic; color: #555; border-left: 4px solid var(--primary-color); padding-left: 1rem; margin-bottom: 2rem;">
+                    "Làm nghề Y không chỉ là chữa bệnh, mà là lắng nghe và thấu hiểu nỗi lo của ba mẹ. Với Dr.Thanh, nụ
+                    cười
+                    của bé là liều thuốc quý giá nhất."
+                </blockquote>
+
+                <div
+                    style="display: flex; gap: 20px; color: var(--primary-color); font-weight: bold; font-size: 1.1rem;">
+                    <span style="display: flex; align-items: center; gap: 8px;">✅ 10 Năm Kinh Nghiệm</span>
+                    <span style="display: flex; align-items: center; gap: 8px;">✅ Tận Tâm & Uy Tín</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concerns Section -->
+    <section class="section container">
+        <h2 class="text-center">Bạn đang lo điều gì?</h2>
+        <div class="concerns-grid">
+            <div class="concern-card">
+                <div>🤒</div> Sốt - Ho
+            </div>
+            <div class="concern-card">
+                <div>🥣</div> Ăn dặm
+            </div>
+            <div class="concern-card">
+                <div>😴</div> Ngủ kém
+            </div>
+            <div class="concern-card">
+                <div>💩</div> Táo bón
+            </div>
+            <div class="concern-card">
+                <div>💉</div> Tiêm chủng
+            </div>
+            <div class="concern-card">
+                <div>👶</div> Sơ sinh
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Banner -->
+    <section class="section" style="background-color: var(--primary-color); color: var(--white);">
+        <div class="container"
+            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1;">
+                <h2 style="color: var(--white);">Tải Ebook + Checklist miễn phí</h2>
+                <p>Chăm sóc bé sơ sinh 0–28 ngày. Bí kíp giúp mẹ nhàn tênh.</p>
+            </div>
+            <form id="home-lead-form" class="lead-form"
+                style="flex: 1; background: var(--white); padding: 1.5rem; border-radius: 12px; color: var(--text-color);">
+                <input type="hidden" name="resource" value="Ebook Sơ Sinh (Home)">
+                <input type="text" name="name" placeholder="Họ tên mẹ" class="mb-2"
+                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                <input type="email" name="email" placeholder="Email nhận tài liệu" class="mb-2"
+                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                <button type="submit" class="btn btn-accent" style="width: 100%;">Gửi cho tôi ngay</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section container">
+        <h2 class="text-center mb-4">Dịch vụ từ trái tim</h2>
+        <div class="services-grid">
+            <div class="service-card" style="padding: 0; overflow: hidden; text-align: left;">
+                <div
+                    style="height: 200px; background-image: url('public/doctor_exam.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3>Khám Nhi Tổng Quát</h3>
+                    <p class="mb-2">Bác sĩ Thanh thăm khám kỹ lưỡng, nhẹ nhàng, không lạm dụng kháng sinh.</p>
+                    <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Đặt lịch</a>
+                </div>
+            </div>
+            <div class="service-card" style="padding: 0; overflow: hidden; text-align: left;">
+                <div
+                    style="height: 200px; background-image: url('public/doctor_talk.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3>Tư Vấn Dinh Dưỡng</h3>
+                    <p class="mb-2">Giải pháp cho bé biếng ăn, chậm tăng cân, giúp ba mẹ nuôi con nhàn tênh.</p>
+                    <a href="consultation.html" class="btn btn-accent" style="width: 100%; text-align: center;">Xem
+                        gói</a>
+                </div>
+            </div>
+            <div class="service-card" style="padding: 0; overflow: hidden; text-align: left;">
+                <div
+                    style="height: 200px; background-image: url('public/newborn_care.png'); background-size: cover; background-position: center;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3>Gói Chăm Sóc Sơ Sinh</h3>
+                    <p class="mb-2">Đồng hành cùng mẹ bầu và bé sơ sinh 3 tháng đầu đời.</p>
+                    <a href="consultation.html" class="btn btn-primary" style="width: 100%; text-align: center;">Chi
+                        tiết</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube & Banner -->
+    <section class="section container text-center">
+        <h2 class="mb-4">Video nổi bật từ YouTube DrThanh</h2>
+        <img src="public/banner.png" alt="YouTube Banner"
+            style="width: 100%; border-radius: 12px; margin-bottom: 2rem;">
+        <a href="https://www.youtube.com/@drthanhnhikhoa" target="_blank" class="btn btn-primary">Xem kênh YouTube</a>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="section" style="background-color: #fff9f2;">
+        <div class="container text-center">
+            <h2 class="mb-4">Ba mẹ nói gì về DrThanh?</h2>
+            <div class="services-grid">
+                <div class="service-card" style="font-style: italic;">
+                    <p class="mb-2">"Bác sĩ khám rất kỹ, giải thích dễ hiểu. Bé nhà mình trộm vía uống thuốc 2 ngày là
+                        đỡ hẳn."</p>
+                    <p style="font-weight: bold; color: var(--primary-color);">- Mẹ Bé Bông</p>
+                </div>
+                <div class="service-card" style="font-style: italic;">
+                    <p class="mb-2">"Thích nhất là bác sĩ không lạm dụng kháng sinh. Tư vấn dinh dưỡng rất có tâm."</p>
+                    <p style="font-weight: bold; color: var(--primary-color);">- Ba Bé Sóc</p>
+                </div>
+                <div class="service-card" style="font-style: italic;">
+                    <p class="mb-2">"Theo dõi kênh YouTube của bác sĩ từ lúc bầu, giờ nuôi con nhàn tênh nhờ áp dụng
+                        đúng phương pháp."</p>
+                    <p style="font-weight: bold; color: var(--primary-color);">- Mẹ Cherry</p>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2.5rem; margin-bottom: 0;">10K+</h3>
+                    <p>Lượt theo dõi</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2.5rem; margin-bottom: 0;">5000+</h3>
+                    <p>Ca tư vấn thành công</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2.5rem; margin-bottom: 0;">10 Năm</h3>
+                    <p>Kinh nghiệm Nhi khoa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 40px 0; border-top: 1px solid #eee;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3>Nhi khoa DrThanh</h3>
+                <p><strong>Địa chỉ:</strong> 186 Huỳnh Thúc Kháng, phường Hòa Thành, Cà Mau</p>
+                <p><strong>Hotline/Zalo:</strong> 0944 966 956</p>
+                <p><strong>Giờ làm việc:</strong><br>
+                    T2-T7: 17h-20h<br>
+                    CN: 7h30-11h30 & 13h30-17h</p>
+                <p class="mb-2"><a href="https://zalo.me/g/fledmp883"
+                        style="color: var(--primary-color); font-weight: bold;">Tham gia nhóm Zalo cập nhật lịch</a></p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Liên kết</h4>
+                <ul style="list-style: none;">
+                    <li><a href="booking.html">Đặt lịch khám</a></li>
+                    <li><a href="consultation.html">Tư vấn Online</a></li>
+                    <li><a href="products.html">Sản phẩm số</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-4"
+            style="font-size: 0.8rem; color: #888; padding-top: 20px; border-top: 1px solid #eee;">
+            <p>Nội dung mang tính tham khảo, không thay thế khám trực tiếp khi có dấu hiệu nặng.</p>
+            <p>&copy; 2026 DrThanh Pediatrics</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

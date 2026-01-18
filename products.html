@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm số - Nhi khoa DrThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ddd;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-tag {
+            background: var(--bg-color);
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header
+        style="background-color: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; padding: 10px 0;">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo"><img src="public/logo.png" alt="DrThanh Logo" style="height: 50px;"></a>
+            <button class="mobile-menu-btn"
+                style="display: none; font-size: 1.5rem; background: none; border: none;">☰</button>
+            <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="resources.html">Tài liệu</a></li>
+                <li><a href="products.html">Sản phẩm số</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Đặt
+                        lịch khám</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h1 class="text-center mb-4">Sản Phẩm Số & Khóa Học</h1>
+
+        <h2 class="mb-2">Dành Cho Mẹ Bầu & Sơ Sinh</h2>
+        <div class="concerns-grid mb-4" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <div class="product-card">
+                <div class="product-image">📚</div>
+                <div class="product-content">
+                    <span class="product-tag">Ebook</span>
+                    <h3>Sổ tay Chăm sóc Sơ sinh toàn diện</h3>
+                    <p class="mb-2">Kiến thức chuẩn y khoa từ A-Z cho 3 tháng đầu đời.</p>
+                    <p style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">199.000đ</p>
+                    <button class="btn btn-primary"
+                        onclick="alert('Chức năng thanh toán đang hoàn thiện. Vui lòng liên hệ Zalo 0944966956 để mua.')">Mua
+                        ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🎥</div>
+                <div class="product-content">
+                    <span class="product-tag">Video Course</span>
+                    <h3>Khoá học: Tắm & Massage cho bé</h3>
+                    <p class="mb-2">Hướng dẫn thực hành chi tiết qua video 4K.</p>
+                    <p style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">299.000đ</p>
+                    <button class="btn btn-primary"
+                        onclick="alert('Chức năng thanh toán đang hoàn thiện. Vui lòng liên hệ Zalo 0944966956 để mua.')">Mua
+                        ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mb-2">Dành Cho Bé Ăn Dặm</h2>
+        <div class="concerns-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <div class="product-card">
+                <div class="product-image">🥗</div>
+                <div class="product-content">
+                    <span class="product-tag">Menu</span>
+                    <h3>Thực đơn ăn dặm 30 ngày</h3>
+                    <p class="mb-2">Đa dạng, đủ chất, dễ nấu cho mẹ bận rộn.</p>
+                    <p style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">99.000đ</p>
+                    <button class="btn btn-primary"
+                        onclick="alert('Chức năng thanh toán đang hoàn thiện. Vui lòng liên hệ Zalo 0944966956 để mua.')">Mua
+                        ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 40px 0; border-top: 1px solid #eee;">
+        <div class="container text-center">
+            <p>&copy; 2026 DrThanh Pediatrics</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

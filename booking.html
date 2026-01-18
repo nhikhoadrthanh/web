@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt lịch khám - Nhi khoa DrThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Reusing Header Styles from style.css + inline overrides if needed -->
+    <style>
+        /* Form Specific Styles */
+        .booking-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Copy of Index Header) -->
+    <header
+        style="background-color: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; padding: 10px 0;">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo"><img src="public/logo.png" alt="DrThanh Logo" style="height: 50px;"></a>
+            <button class="mobile-menu-btn"
+                style="display: none; font-size: 1.5rem; background: none; border: none;">☰</button>
+            <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="resources.html">Tài liệu</a></li>
+                <li><a href="products.html">Sản phẩm số</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Đặt
+                        lịch khám</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h1 class="text-center">Đăng Ký Khám Nhi</h1>
+        <p class="text-center mb-4">Vui lòng điền thông tin bên dưới, phòng khám sẽ liên hệ xác nhận.</p>
+
+        <form class="booking-form" id="booking-form">
+            <div class="form-group">
+                <label>Họ tên Ba/Mẹ (*)</label>
+                <input type="text" name="name" required placeholder="Nhập họ tên...">
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại (*)</label>
+                <input type="tel" name="phone" required placeholder="Nhập số điện thoại...">
+            </div>
+            <div class="form-group">
+                <label>Tên Bé & Tuổi</label>
+                <input type="text" name="childInfo" placeholder="Ví dụ: Bé Bi - 2 tuổi">
+            </div>
+            <div class="form-group">
+                <label>Lý do khám</label>
+                <select name="reason">
+                    <option value="Khám tổng quát">Khám tổng quát</option>
+                    <option value="Tư vấn dinh dưỡng">Tư vấn dinh dưỡng</option>
+                    <option value="Ho, Sốt, Sổ mũi">Ho, Sốt, Sổ mũi</option>
+                    <option value="Tiêm chủng">Tiêm chủng</option>
+                    <option value="Khác">Khác</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ngày/Giờ mong muốn</label>
+                <input type="datetime-local" name="date">
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" required id="policy">
+                <label for="policy" style="font-weight: 400; margin: 0;">Tôi đồng ý với chính sách bảo mật thông
+                    tin.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Gửi Đăng Ký</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 40px 0; border-top: 1px solid #eee; margin-top: 40px;">
+        <div class="container text-center">
+            <p>&copy; 2026 DrThanh Pediatrics</p>
+            <p><a href="index.html">Về trang chủ</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Inline script to handle mobile menu since we copied HTML but didn't link the class seamlessly without external CSS fully handling dynamic media queries in one go if I missed something, but main.js should handle it if classes match.
+        // Actually main.js expects .mobile-menu-btn and .nav-links. I added style="display:none" to btn inline, need to make sure media query in style.css or <style> block handles it.
+        // I added a <style> block in head for .booking-form, but I need to make sure the header styles are present.
+        // I will copy the header styles to a common <style> block or trust style.css if I put them there.
+        // I put most styles in <style> of index.html. I should have put them in css/style.css.
+        // I will rely on style.css for globals, but I realized I put specific header CSS in index.html <head>.
+        // FIX: I will add the header CSS to this file's <head> too or move it to style.css in a future step. For now I paste it here to ensure it works.
+    </script>
+    <style>
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+                /* Override inline flex */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập Admin - DrThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #eee;">
+
+    <div
+        style="background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-md); width: 100%; max-width: 400px;">
+        <h2 class="text-center mb-4">Admin Login</h2>
+        <form onsubmit="handleAdminLogin(event)">
+            <div class="mb-2">
+                <label>Tài khoản</label>
+                <input type="text" id="username" placeholder="Nhập tài khoản" required>
+            </div>
+            <div class="mb-4">
+                <label>Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Đăng nhập</button>
+        </form>
+        <p class="text-center mt-4"><a href="index.html">← Quay lại trang chủ</a></p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
